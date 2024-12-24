@@ -1,23 +1,20 @@
 import { AtpAgent } from "@atproto/api";
 import { generateMessage } from "./generateMessage.js";
+import { getData } from "./getData.js";
 export const main = async () => {
-    const JSON_URL = "https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/NWSSStateMap.json";
-    const dataRaw = await fetch(JSON_URL);
-    if (!dataRaw) {
-        throw new Error("Error retrieving data from CDC.");
+    const identifier = process.env.BSKY_ID;
+    const password = process.env.BSKY_PASSWORD;
+    if (!identifier || !password) {
+        throw new Error("Missing AT Protocol credentials. Check environment variables.");
     }
-    const dataText = await dataRaw.text();
-    const data = JSON.parse(dataText);
-    if (!data) {
-        throw new Error("Error parsing data JSON.");
-    }
+    const data = await getData();
     const text = generateMessage(data);
     const agent = new AtpAgent({
         service: "https://bsky.social",
     });
     await agent.login({
-        identifier: process.env.BSKY_ID,
-        password: process.env.BSKY_PASSWORD,
+        identifier,
+        password,
     });
     const response = await agent.post({
         text,
