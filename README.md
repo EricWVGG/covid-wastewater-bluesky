@@ -23,6 +23,6 @@ This project was inspired and informed by [Waldo Jaquith](https://waldo.jaquith.
 
 ## Errata
 
-I am not interested in opinions regarding COVID-19, the pandemic, masks, vaccines, chemtrails, Jeffrey Epstein, etc.
+I am not interested in opinions regarding COVID-19, the pandemic, masks, vaccines, chemtrails, etc.
 
 Message [@COVID-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) with any other questions.
