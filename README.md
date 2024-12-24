@@ -1,12 +1,8 @@
 # covid-wastewater-bluesky
 
-A Bluesky bot that posts state-by-state Covid wastewater data from the United States Center for Disease Control.
+A Bluesky bot that posts state-by-state [COVID wastewater data from the US Center for Disease Control](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html)
 
 [@COVID-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) posts every Saturday (when the CDC posts fresh data) and again every Monday (when people actually look at their feeds).
-
-## Data
-
-Data comes from the [CDC COVID-19 Current Wastewater Viral Activity Levels Map](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html).
 
 ## Key
 
@@ -27,4 +23,6 @@ This project was inspired and informed by [Waldo Jaquith](https://waldo.jaquith.
 
 ## Errata
 
-I am not interested in opinions regarding COVID-19, the pandemic, masks, vaccines, chemtrails, etc. Message @COVID-wastewater@bsky.social with any other questions.
+I am not interested in opinions regarding COVID-19, the pandemic, masks, vaccines, chemtrails, Jeffrey Epstein, etc.
+
+Message [@COVID-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) with any other questions.

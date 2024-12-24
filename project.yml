@@ -19,15 +19,11 @@ packages:
         annotations: {}
         limits: { memory: 512 }
         triggers:
-          - name: tues-test
-            sourceType: scheduler
-            sourceDetails:
-              cron: "40 11 * * 1"
           - name: every-saturday
             sourceType: scheduler
             sourceDetails:
-              cron: "0 16 * * 6"
+              cron: "0 21 * * 6"
           - name: every-monday
             sourceType: scheduler
             sourceDetails:
-              cron: "0 6 * * 1"
+              cron: "0 11 * * 1"
