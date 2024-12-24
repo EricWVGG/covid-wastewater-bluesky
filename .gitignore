@@ -10,3 +10,4 @@ package-lock.json
 .deployed
 deploy.sh
 test.sh
+.env

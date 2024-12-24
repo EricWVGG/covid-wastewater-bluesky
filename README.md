@@ -1,8 +1,8 @@
 # covid-wastewater-bluesky
 
-A Bluesky bot that posts state-by-state [COVID wastewater data from the US Center for Disease Control](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html)
+A Bluesky bot that posts state-by-state [COVID-19 wastewater data from the US Center for Disease Control](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html)
 
-[@COVID-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) posts every Saturday (when the CDC posts fresh data) and again every Monday (when people actually look at their feeds).
+[@covid-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) posts every Saturday (when the CDC posts fresh data) and again every Monday (when people actually look at their feeds).
 
 ## Key
 

@@ -3,6 +3,14 @@ import { generateMessage } from "./generateMessage.js";
 import { getData } from "./getData.js";
 
 export const main = async () => {
+  const identifier = process.env.BSKY_ID;
+  const password = process.env.BSKY_PASSWORD;
+  if (!identifier || !password) {
+    throw new Error(
+      "Missing AT Protocol credentials. Check environment variables."
+    );
+  }
+
   const data = await getData();
 
   const text = generateMessage(data);
@@ -12,8 +20,8 @@ export const main = async () => {
   });
 
   await agent.login({
-    identifier: process.env.BSKY_ID,
-    password: process.env.BSKY_PASSWORD,
+    identifier,
+    password,
   });
 
   const response = await agent.post({
