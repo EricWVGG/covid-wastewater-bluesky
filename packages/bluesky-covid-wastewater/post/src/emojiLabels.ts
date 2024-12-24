@@ -1,4 +1,4 @@
-export const replaceLabels = {
+export const emojiLabels = {
   "Very High": "🔥",
   High: "🔴",
   Moderate: "🟠",

@@ -9,9 +9,9 @@ export type WVAL_Category =
 export type CdcDatum = {
   Coverage: string | null;
   Number_of_Sites: string; // num
-  "State/Territory": string;
-  State_Abbreviation: string;
+  "State/Territory": string; // could be enum
+  State_Abbreviation: string; // could be enum
   Time_Period: string;
   WVAL_Category: WVAL_Category;
-  activity_level: string;
+  activity_level: string; // num
 };

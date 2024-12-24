@@ -1,4 +1,4 @@
-export const replaceMonths = (input: string) =>
+export const abbreviateMonths = (input: string) =>
   input
     .replaceAll("January", "Jan")
     .replaceAll("February", "Feb")

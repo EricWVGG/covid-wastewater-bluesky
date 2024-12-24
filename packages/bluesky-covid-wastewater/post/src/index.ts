@@ -1,33 +1,11 @@
-import { AtpAgent } from "@atproto/api";
 import { generateMessage } from "./generateMessage.js";
-import { getData } from "./getData.js";
+import { getDataFromCDC } from "./getDataFromCDC.js";
+import { postToAtp } from "./postToAtp.js";
 
 export const main = async () => {
-  const identifier = process.env.BSKY_ID;
-  const password = process.env.BSKY_PASSWORD;
-  if (!identifier || !password) {
-    throw new Error(
-      "Missing AT Protocol credentials. Check environment variables."
-    );
-  }
-
-  const data = await getData();
+  const data = await getDataFromCDC();
 
   const text = generateMessage(data);
 
-  const agent = new AtpAgent({
-    service: "https://bsky.social",
-  });
-
-  await agent.login({
-    identifier,
-    password,
-  });
-
-  const response = await agent.post({
-    text,
-    createdAt: new Date().toISOString(),
-  });
-
-  return response;
+  return postToAtp(text);
 };
