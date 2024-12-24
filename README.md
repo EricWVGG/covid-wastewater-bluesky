@@ -1,4 +1,4 @@
-# 💩 covid-wastewater-bluesky
+# 💩 covid-wastewater-bluesky 😷
 
 A Bluesky bot that posts state-by-state [COVID-19 wastewater data from the US Center for Disease Control](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html).
 
@@ -10,7 +10,7 @@ _Emoji?_ Due to Bluesky character limits, this bot truncates levels as per this 
 
 - 🔥: Very High
 - 🔴: High
-  🟠: Moderate
+- 🟠: Moderate
 - 🟡: Low
 - 🟢: Minimal
 - ❔: No Data
