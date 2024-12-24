@@ -1,0 +1,29 @@
+[
+  {
+    "apihost": "https://faas-nyc1-2ef2e6cc.doserverless.co",
+    "namespace": "fn-00b3c9ab-fef4-46e8-8d84-deded9059c19",
+    "packageVersions": {},
+    "actionVersions": {
+      "bluesky-covid-wastewater/post": {
+        "digest": "5d552bca74a60f319973fd7fcc7abac3eb7ed50e7b68b4316a7db9ff612292d2",
+        "version": "0.0.8"
+      }
+    }
+  },
+  {
+    "apihost": "https://faas-nyc1-2ef2e6cc.doserverless.co",
+    "namespace": "fn-49ecc5fc-aa31-4c60-b5ba-3fa4d035afc4",
+    "packageVersions": {
+      "bluesky-covid-wastewater": {
+        "version": "0.0.113",
+        "digest": "c65bbab56af9b318449903f67e7a7888ba7cd86f7b9a5080fd70b78e68dca9c1"
+      }
+    },
+    "actionVersions": {
+      "bluesky-covid-wastewater/post": {
+        "version": "0.0.74",
+        "digest": "69a2e416ec2ed48522f84a093ae151d0341fcc0b69cc981250efcf28758e2b83"
+      }
+    }
+  }
+]

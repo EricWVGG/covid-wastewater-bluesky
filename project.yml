@@ -1,0 +1,20 @@
+parameters: {}
+environment: {}
+packages:
+  - name: bluesky-covid-wastewater
+    shared: false
+    environment: {}
+    parameters: {}
+    annotations: {}
+    functions:
+      - name: post
+        binary: false
+        main: ""
+        runtime: nodejs:18
+        web: true
+        webSecure: false
+        parameters: {}
+        environment:
+          { BSKY_ID: "${BSKY_ID}", BSKY_PASSWORD: "${BSKY_PASSWORD}" }
+        annotations: {}
+        limits: { memory: 512 }
