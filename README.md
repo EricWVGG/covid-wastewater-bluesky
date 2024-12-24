@@ -6,7 +6,7 @@ A Bluesky bot that posts state-by-state Covid wastewater data from the United St
 
 ## Data
 
-Data comes from the [CDC COVID-19 Current Wastewater Viral Activity Levels Map](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html). This bot
+Data comes from the [CDC COVID-19 Current Wastewater Viral Activity Levels Map](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html).
 
 ## Key
 

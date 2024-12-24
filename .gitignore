@@ -8,3 +8,5 @@ package-lock.json
 .nova
 .do
 .deployed
+deploy.sh
+test.sh
