@@ -5,4 +5,4 @@ export const emojiLabels = {
   Low: "🟡",
   Minimal: "🟢",
   "No Data": "❔",
-};
+}

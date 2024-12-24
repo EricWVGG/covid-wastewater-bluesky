@@ -1,11 +1,11 @@
-import { generateMessage } from "./generateMessage.js";
-import { getDataFromCDC } from "./getDataFromCDC.js";
-import { postToAtp } from "./postToAtp.js";
+import { generateMessage } from "./generateMessage.js"
+import { getDataFromCDC } from "./getDataFromCDC.js"
+import { postToAtp } from "./postToAtp.js"
 
 export const main = async () => {
-  const data = await getDataFromCDC();
+  const data = await getDataFromCDC()
 
-  const text = generateMessage(data);
+  const text = generateMessage(data)
 
-  return postToAtp(text);
-};
+  return postToAtp(text)
+}

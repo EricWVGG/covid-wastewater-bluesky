@@ -10,4 +10,4 @@ export const abbreviateMonths = (input: string) =>
     .replaceAll("September", "Sep")
     .replaceAll("October", "Oct")
     .replaceAll("November", "Nov")
-    .replaceAll("December", "Dec");
+    .replaceAll("December", "Dec")
