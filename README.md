@@ -12,12 +12,12 @@ Data comes from the [CDC COVID-19 Current Wastewater Viral Activity Levels Map](
 
 Due to character limits, this bot truncates levels as per this key:
 
-🔥: Very High
-🔴: High
-🟠: Moderate
-🟡: Low
-🟢: Minimal
-❔: No Data
+- 🔥: Very High
+- 🔴: High
+- 🟠: Moderate
+- 🟡: Low
+- 🟢: Minimal
+- ❔: No Data
 
 ## Credits
 
@@ -27,4 +27,4 @@ This project was inspired and informed by [Waldo Jaquith](https://waldo.jaquith.
 
 ## Errata
 
-I am not interested in your opinions vis a vis COVID or vaccines.
+I am not interested in opinions regarding COVID-19, the pandemic, masks, vaccines, chemtrails, etc. Message @COVID-wastewater@bsky.social with any other questions.
