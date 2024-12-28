@@ -8,7 +8,7 @@ A Bluesky bot that posts state-by-state [COVID-19 wastewater data](https://www.c
 
 ### What about other nations?
 
-I’d love to spin up versions of this for the rest of the world, but I don’t have time to hunt down the data. If you can point me to data feeds in common formats — JSON, CSV, XML, whatever — please open an issue here.
+I’d love to spin up versions of this for the rest of the world, but I don’t have time to hunt down the data. If you can point me to data feeds in common formats — JSON, CSV, XML, whatever — please [open an issue here](https://github.com/EricWVGG/covid-wastewater-bluesky/issues).
 
 ### Why is tracking poop water useful?
 
@@ -35,7 +35,7 @@ Replies would clutter the feeds of followers. You are of course free to “quote
 
 ## Contact
 
-Message [@covid-wastewater@bsky.social](https://bsky.app/profile/covid-wastewater.bsky.social) or [open an issue here](https://github.com/EricWVGG/covid-wastewater-bluesky/issues) with any other questions.
+Please direct any questions [here](https://github.com/EricWVGG/covid-wastewater-bluesky/discussions).
 
 ## Credits
 
