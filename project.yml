@@ -14,7 +14,7 @@ packages:
         web: true
         webSecure: false
         parameters: {}
-        environment: { BSKY_ID: "${BSKY_ID}", BSKY_PASSWORD: "${BSKY_PASSWORD}" }
+        environment: { BSKY_ID: "${BSKY_ID}", BSKY_PASSWORD: "${BSKY_PASSWORD}", BLOCK_REPLIES: "${BLOCK_REPLIES}" }
         annotations: {}
         limits: { memory: 512 }
         triggers:
