@@ -1,10 +1,13 @@
 # 💩 covid-wastewater-bluesky 😷
 
-A Bluesky bot that posts state-by-state [COVID-19 wastewater data from the US Center for Disease Control](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html).
+A Bluesky bot that posts state-by-state [COVID-19 wastewater data](https://www.cdc.gov/nwss/rv/COVID19-currentlevels.html) from the US Center for Disease Control.
 
 [@covid-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) posts every Saturday (when the CDC posts fresh data) and again every Monday (when people actually look at their feeds).
 
 ## FAQ
+
+_Why is tracking poop water useful?_
+Detection of the virus in wastewater is a reliable indicator of surges of the virus within communities. And it’s based on actual samples of data instead of surveys and gathered “anecdata.” [Learn more here.](https://health.ucdavis.edu/news/headlines/tracking-covid-19-in-2024-wastewater-data-is-key-early-warning-sign-for-surges/2024/08)
 
 _Emoji?_ Due to Bluesky character limits, this bot truncates levels as per this key:
 
@@ -19,7 +22,7 @@ _The CDC site admits that certain states return limited coverage, shouldn’t th
 
 _Why are replies disabled?_ Replies would clutter the feeds of followers. You are of course free to “quote” any post and begin a discussion in your own feed.
 
-Message [@COVID-wastewater@bsky.social](https://bsky.app/profile/COVID-wastewater.bsky.social) with any other questions.
+Message [@covid-wastewater@bsky.social](https://bsky.app/profile/covid-wastewater.bsky.social) with any other questions.
 
 ## Credits
 

@@ -1,5 +1,5 @@
-import { replaceMonths } from "./replaceMonths.js";
-import { replaceLabels } from "./replaceLabels.js";
+import { abbreviateMonths } from "./abbreviateMonths.js";
+import { emojiLabels } from "./emojiLabels.js";
 export const generateMessage = (data) => {
     const period = data[0].Time_Period;
     const report = data.reduce((acc, datum) => {
@@ -14,7 +14,7 @@ export const generateMessage = (data) => {
         "No Data": [],
     });
     const parsedResult = Object.keys(report)
-        .map((level) => `${replaceLabels[level]} ${report[level].join(", ")}`)
+        .map((level) => `${emojiLabels[level]} ${report[level].join(", ")}`)
         .join("\n\n");
-    return `CDC wastewater reports ${replaceMonths(period)}\n\n${parsedResult}`;
+    return `CDC wastewater reports: ${abbreviateMonths(period)}\n\n${parsedResult}`;
 };
