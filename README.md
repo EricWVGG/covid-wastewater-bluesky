@@ -22,6 +22,8 @@ _The CDC site admits that certain states return limited coverage, shouldn’t th
 
 _Why are replies disabled?_ Replies would clutter the feeds of followers. You are of course free to “quote” any post and begin a discussion in your own feed.
 
+_What about other nations?_ I’d love to spin up versions of this for the rest of the world, but I don’t have time to hunt down the data. If you can point me to data feeds in common formats — JSON, CSV, XML, whatever — please open an issue here.
+
 Message [@covid-wastewater@bsky.social](https://bsky.app/profile/covid-wastewater.bsky.social) with any other questions.
 
 ## Credits

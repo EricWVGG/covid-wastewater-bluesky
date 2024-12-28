@@ -14,16 +14,15 @@ packages:
         web: true
         webSecure: false
         parameters: {}
-        environment:
-          { BSKY_ID: "${BSKY_ID}", BSKY_PASSWORD: "${BSKY_PASSWORD}" }
+        environment: { BSKY_ID: "${BSKY_ID}", BSKY_PASSWORD: "${BSKY_PASSWORD}" }
         annotations: {}
         limits: { memory: 512 }
         triggers:
-          - name: every-saturday
+          - name: every-friday
             sourceType: scheduler
             sourceDetails:
-              cron: "0 21 * * 6"
+              cron: "1 11 * * 5"
           - name: every-monday
             sourceType: scheduler
             sourceDetails:
-              cron: "0 11 * * 1"
+              cron: "2 11 * * 1"
