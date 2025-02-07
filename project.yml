@@ -21,7 +21,7 @@ packages:
           - name: every-saturday
             sourceType: scheduler
             sourceDetails:
-              cron: "1 11 * * 6"
+              cron: "1 0 * * 6"
           - name: every-monday
             sourceType: scheduler
             sourceDetails:
