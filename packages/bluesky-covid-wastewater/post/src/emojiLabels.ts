@@ -3,6 +3,6 @@ export const emojiLabels = {
   High: "🔴",
   Moderate: "🟠",
   Low: "🟡",
-  Minimal: "🟢",
+  "Very Low": "🟢",
   "No Data": "❔",
 }

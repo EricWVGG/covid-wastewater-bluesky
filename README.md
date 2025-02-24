@@ -22,7 +22,7 @@ Due to Bluesky character limits, this bot truncates levels as per this key:
 - 🔴: High
 - 🟠: Moderate
 - 🟡: Low
-- 🟢: Minimal
+- 🟢: Very Low
 - ❔: No Data
 
 ### The CDC site admits that certain states return limited coverage, shouldn’t that factor into…

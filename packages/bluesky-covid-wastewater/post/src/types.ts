@@ -1,4 +1,4 @@
-export type WVAL_Category = "No Data" | "Minimal" | "Low" | "Moderate" | "High" | "Very High"
+export type WVAL_Category = "No Data" | "Very Low" | "Low" | "Moderate" | "High" | "Very High"
 
 export type CdcDatum = {
   Coverage: string | null

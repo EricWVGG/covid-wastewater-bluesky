@@ -4,7 +4,7 @@ import { type WVAL_Category, type CdcDatum } from "./types.js"
 
 export const generateMessage = (data: Array<CdcDatum>) => {
   const period = data[0].Time_Period
-
+  console.log("data", data)
   const report = data.reduce(
     (acc, datum) => {
       acc[datum.WVAL_Category].push(datum.State_Abbreviation)
@@ -15,7 +15,7 @@ export const generateMessage = (data: Array<CdcDatum>) => {
       High: [],
       Moderate: [],
       Low: [],
-      Minimal: [],
+      "Very Low": [],
       "No Data": [],
     } as Record<WVAL_Category, Array<string>>
   )
