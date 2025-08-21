@@ -1,6 +1,8 @@
 import { type CdcDatum } from "./types.js"
 
-const JSON_URL = "https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/NWSSStateMap.json"
+// const JSON_URL = "https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/NWSSStateMap.json"
+// const JSON_URL = "https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/sc2/nwsssc2statemapDL.json"
+const JSON_URL = process.env.JSON_URL
 const MAX_ATTEMPTS = Number(process.env.MAX_ATTEMPTS) || 3
 const PAUSE_BETWEEN_ATTEMPTS = Number(process.env.PAUSE_BETWEEN_ATTEMPTS) || 3000
 // ^ three seconds (note: serverless functions cost money!)
