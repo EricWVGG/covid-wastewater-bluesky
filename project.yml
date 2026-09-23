@@ -22,7 +22,3 @@ packages:
             sourceType: scheduler
             sourceDetails:
               cron: "1 0 * * 6"
-          - name: every-monday
-            sourceType: scheduler
-            sourceDetails:
-              cron: "2 13 * * 1"
