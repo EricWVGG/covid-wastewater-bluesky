@@ -1,3 +1,4 @@
+import "dotenv/config"
 import { AtpAgent } from "@atproto/api"
 import { blockReplies } from "./blockReplies.js"
 

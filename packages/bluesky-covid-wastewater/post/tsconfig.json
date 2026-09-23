@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "importHelpers": true,
-    "module": "es2022",
+    "module": "nodenext",
     "outDir": "lib",
     "rootDir": "src",
     "target": "es2022",

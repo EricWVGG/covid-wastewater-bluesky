@@ -1,0 +1,1 @@
+{"root":["./src/abbreviatemonths.ts","./src/blockreplies.ts","./src/emojilabels.ts","./src/generatemessage.ts","./src/getdatafromcdc.ts","./src/index.ts","./src/posttoatp.ts","./src/test.ts","./src/types.ts"],"errors":true,"version":"5.9.3"}
