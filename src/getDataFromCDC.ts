@@ -36,7 +36,7 @@ export const getDataFromCDC = async (env: Env, attemptsLeft = Number(env.MAX_ATT
     return { weekEnd, data }
   } catch (error) {
     if (attemptsLeft <= 1) {
-      throw new Error(`Failed to retrieve data after ${env.MAX_ATTEMPTS} retries.`, { cause: error })
+      throw new Error(`Failed to retrieve data after ${env.MAX_ATTEMPTS} retries. `, { cause: error })
     }
     await sleep(Number(env.PAUSE_BETWEEN_ATTEMPTS) || 3000)
     return getDataFromCDC(env, attemptsLeft - 1)

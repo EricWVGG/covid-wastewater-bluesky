@@ -54,10 +54,10 @@ export const generateMessage = ({ weekEnd, data }: CdcWeekData) => {
 
   const parsedResult = (Object.keys(report) as Array<WVAL_Category>)
     .filter((level) => report[level].length > 0)
-    .map((level) => `${emojiLabels[level]} ${report[level].sort().join(", ")}`)
+    .map((level) => `[${level.toLowerCase()}] ${emojiLabels[level]} ${report[level].sort().join(", ")}`)
     .join("\n\n")
 
-  const message = `CDC wastewater reports: ${formatWeekEnd(weekEnd)}\n\n${parsedResult}`
+  const message = `CDC wastewater reports: ${formatWeekEnd(weekEnd)}\n\n${parsedResult}\n\n\n🔥 [very high]  🔴 [high]  🟠 [mod]  🟡 [low]  🟢 [very low]`
 
   if (!message.includes("CA") || !message.includes("NY")) {
     throw new Error("Formatted output is missing states (at least CA and NY)")
