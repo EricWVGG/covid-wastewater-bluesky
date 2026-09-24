@@ -1,4 +1,3 @@
-import "dotenv/config"
 import { type CdcSiteDatum, type CdcWeekData } from "./types.js"
 
 // const JSON_URL = "https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/NWSSStateMap.json"
