@@ -10,10 +10,21 @@ type IPResponse = { result: { ipv4_cidrs: string[] } };
 export class CovidWastewaterBlueskyWorkflow extends WorkflowEntrypoint<Env, Params> {
 	async run(event: WorkflowEvent<Params>, step: WorkflowStep) {
 
-		const data = await step.do("fetch data", async () => {
-			const data = await getDataFromCDC(this.env)
-			return data
-		});
+		const maxAttempts = Number(this.env.MAX_ATTEMPTS) || 3;
+		const pauseBetweenAttempts = Number(this.env.PAUSE_BETWEEN_ATTEMPTS) || 3000;
+
+		const data = await step.do(
+			"fetch data",
+			{
+				retries: {
+					limit: Math.max(0, maxAttempts - 1),
+					delay: pauseBetweenAttempts,
+					backoff: "constant",
+				},
+				timeout: "5 minutes",
+			},
+			async () => getDataFromCDC(this.env)
+		);
 
 		const response = await step.do('post message', async () => {
 			const text = generateMessage(data)

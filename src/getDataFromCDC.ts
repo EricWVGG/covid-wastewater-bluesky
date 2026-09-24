@@ -2,8 +2,6 @@ import { type CdcSiteDatum, type CdcWeekData } from "./types.js"
 
 const PATHOGEN = "SARS-CoV-2"
 
-const sleep = (waitTimeInMs: number) => new Promise((resolve) => setTimeout(resolve, waitTimeInMs))
-
 const getLatestWeekEnd = async (jsonUrl: string) => {
   const params = new URLSearchParams({
     "$select": "max(week_end) as latest",
@@ -29,16 +27,8 @@ const getSiteDataForWeek = async (jsonUrl: string, weekEnd: string) => {
   return JSON.parse(dataText) as Array<CdcSiteDatum>
 }
 
-export const getDataFromCDC = async (env: Env, attemptsLeft = Number(env.MAX_ATTEMPTS) || 3): Promise<CdcWeekData> => {
-  try {
-    const weekEnd = await getLatestWeekEnd(env.JSON_URL)
-    const data = await getSiteDataForWeek(env.JSON_URL, weekEnd)
-    return { weekEnd, data }
-  } catch (error) {
-    if (attemptsLeft <= 1) {
-      throw new Error(`Failed to retrieve data after ${env.MAX_ATTEMPTS} retries. `, { cause: error })
-    }
-    await sleep(Number(env.PAUSE_BETWEEN_ATTEMPTS) || 3000)
-    return getDataFromCDC(env, attemptsLeft - 1)
-  }
+export const getDataFromCDC = async (env: Env): Promise<CdcWeekData> => {
+  const weekEnd = await getLatestWeekEnd(env.JSON_URL)
+  const data = await getSiteDataForWeek(env.JSON_URL, weekEnd)
+  return { weekEnd, data }
 }
