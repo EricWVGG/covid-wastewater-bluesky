@@ -11,13 +11,13 @@ export class CovidWastewaterBlueskyWorkflow extends WorkflowEntrypoint<Env, Para
 	async run(event: WorkflowEvent<Params>, step: WorkflowStep) {
 
 		const data = await step.do("fetch data", async () => {
-			const data = await getDataFromCDC()
+			const data = await getDataFromCDC(this.env)
 			return data
 		});
 
 		const response = await step.do('post message', async () => {
 			const text = generateMessage(data)
-			return postToAtp(text)
+			return postToAtp(text, this.env)
 		});
 
 		return response;

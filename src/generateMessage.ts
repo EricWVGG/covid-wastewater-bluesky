@@ -52,7 +52,7 @@ export const generateMessage = ({ weekEnd, data }: CdcWeekData) => {
     } as Record<WVAL_Category, Array<string>>
   )
 
-  const parsedResult = Object.keys(report)
+  const parsedResult = (Object.keys(report) as Array<WVAL_Category>)
     .filter((level) => report[level].length > 0)
     .map((level) => `${emojiLabels[level]} ${report[level].sort().join(", ")}`)
     .join("\n\n")

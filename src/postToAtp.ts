@@ -1,11 +1,9 @@
 import { AtpAgent } from "@atproto/api"
 import { blockReplies } from "./blockReplies.js"
 
-const BLOCK_REPLIES = process.env.BLOCK_REPLIES
-
-export const postToAtp = async (text: string) => {
-  const identifier = process.env.BSKY_ID
-  const password = process.env.BSKY_PASSWORD
+export const postToAtp = async (text: string, env: Env) => {
+  const identifier = env.BSKY_ID
+  const password = env.BSKY_PASSWORD
   if (!identifier || !password) {
     throw new Error("Missing AT Protocol credentials. Check environment variables.")
   }
@@ -25,7 +23,7 @@ export const postToAtp = async (text: string) => {
     createdAt: new Date().toISOString(),
   })
 
-  if (BLOCK_REPLIES) {
+  if (env.BLOCK_REPLIES === "true") {
     await blockReplies(agent, response.uri)
   }
 

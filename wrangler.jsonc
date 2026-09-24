@@ -7,6 +7,12 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "BLOCK_REPLIES": "true",
+    "MAX_ATTEMPTS": "3",
+    "PAUSE_BETWEEN_ATTEMPTS": "3000",
+    "JSON_URL": "https://www.cdc.gov/wcms/vizdata/NCEZID_DIDRI/sc2/nwsssc2statemapDL.json"
+  },
   "workflows": [
     {
       "name": "covid-wastewater-bluesky-workflow",
