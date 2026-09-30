@@ -2,13 +2,24 @@ import { type CdcSiteDatum, type CdcWeekData } from "./types.js"
 
 const PATHOGEN = "SARS-CoV-2"
 
+const fetchRows = async <T>(url: string): Promise<Array<T>> => {
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error(`CDC request failed: ${response.status} ${response.statusText}`)
+  }
+  const body = await response.json()
+  if (!Array.isArray(body)) {
+    throw new Error("CDC response was not an array.")
+  }
+  return body as Array<T>
+}
+
 const getLatestWeekEnd = async (jsonUrl: string) => {
   const params = new URLSearchParams({
     "$select": "max(week_end) as latest",
     "$where": `pathogen_target='${PATHOGEN}'`,
   })
-  const response = await fetch(`${jsonUrl}?${params.toString()}`)
-  const data = (await response.json()) as Array<{ latest: string | null }>
+  const data = await fetchRows<{ latest: string | null }>(`${jsonUrl}?${params.toString()}`)
   const weekEnd = data[0]?.latest
   if (!weekEnd) {
     throw new Error("Could not determine latest week_end from CDC data.")
@@ -22,9 +33,7 @@ const getSiteDataForWeek = async (jsonUrl: string, weekEnd: string) => {
     "$where": `pathogen_target='${PATHOGEN}' AND week_end='${weekEnd}'`,
     "$limit": "50000",
   })
-  const response = await fetch(`${jsonUrl}?${params.toString()}`)
-  const dataText = await response.text()
-  return JSON.parse(dataText) as Array<CdcSiteDatum>
+  return fetchRows<CdcSiteDatum>(`${jsonUrl}?${params.toString()}`)
 }
 
 export const getDataFromCDC = async (env: Env): Promise<CdcWeekData> => {

@@ -1,4 +1,5 @@
 import { AtpAgent } from "@atproto/api"
+import { NonRetryableError } from "cloudflare:workflows"
 import { blockReplies } from "./blockReplies.js"
 
 const MAX_GRAPHEMES = 300
@@ -41,42 +42,34 @@ export const splitIntoPosts = (text: string, max = MAX_GRAPHEMES): Array<string>
   return posts
 }
 
-export const postToAtp = async (text: string, env: Env) => {
+export type PostRef = { uri: string; cid: string }
+
+const login = async (env: Env) => {
   const identifier = env.BSKY_ID
   const password = env.BSKY_PASSWORD
   if (!identifier || !password) {
-    throw new Error("Missing AT Protocol credentials. Check environment variables.")
+    throw new NonRetryableError("Missing AT Protocol credentials. Check environment variables.")
   }
-  const service = new URL("https://bsky.social")
+  const agent = new AtpAgent({ service: new URL("https://bsky.social") })
+  await agent.login({ identifier, password })
+  return agent
+}
 
-  const agent = new AtpAgent({
-    service,
-  })
-
-  await agent.login({
-    identifier,
-    password,
-  })
-
-  const [first, ...rest] = splitIntoPosts(text)
-
-  const response = await agent.post({
-    text: first,
+// Posts a single post; pass root/parent to post it as a reply in a thread.
+export const postToAtp = async (
+  text: string,
+  env: Env,
+  reply?: { root: PostRef; parent: PostRef }
+): Promise<PostRef> => {
+  const agent = await login(env)
+  const { uri, cid } = await agent.post({
+    text,
+    ...(reply && { reply }),
     createdAt: new Date().toISOString(),
   })
+  return { uri, cid }
+}
 
-  let parent = response
-  for (const reply of rest) {
-    parent = await agent.post({
-      text: reply,
-      reply: { root: response, parent },
-      createdAt: new Date().toISOString(),
-    })
-  }
-
-  if (env.BLOCK_REPLIES === "true") {
-    await blockReplies(agent, response.uri)
-  }
-
-  return response
+export const blockRepliesToPost = async (uri: string, env: Env) => {
+  await blockReplies(await login(env), uri)
 }

@@ -59,7 +59,7 @@ export const generateMessage = ({ weekEnd, data }: CdcWeekData) => {
 
   const message = `CDC wastewater reports: ${formatWeekEnd(weekEnd)}\n\n${parsedResult}`
 
-  if (!message.includes("CA") || !message.includes("NY")) {
+  if (!sitesByState.has("California") || !sitesByState.has("New York")) {
     throw new Error("Formatted output is missing states (at least CA and NY)")
   }
 
