@@ -17,7 +17,9 @@
     {
       "name": "covid-wastewater-bluesky-workflow",
       "binding": "COVID_WASTEWATER_BLUESKY_WORKFLOW",
-      "class_name": "CovidWastewaterBlueskyWorkflow"
+      "class_name": "CovidWastewaterBlueskyWorkflow",
+      // Saturday 00:01 UTC (Friday evening US time), after the CDC's weekly update
+      "schedules": ["1 0 * * 6", "2 13 * * 1"]
     }
   ]
 }
