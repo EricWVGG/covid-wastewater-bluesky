@@ -10,7 +10,7 @@
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
-		"@atproto/api": "^0.13.23"
+		"@atproto/api": "^0.30.3"
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-plugin": "^1.0.0",
